@@ -4,15 +4,29 @@
         public $name;
         public $breed;
         public $age;
-        public $price;
+        private $price;
         public $photo;
 
         public function __construct($_name, $_breed, $_age, $_price, $_photo) {
             $this->name = $_name;
             $this->breed = $_breed; 
             $this->age = $_age; 
-            $this->price = $_price;
+            $this->setPrice($_price);
             $this->photo = $_photo; 
+        }
+
+        //SETTA PREZZO
+        public function setPrice($_price) {
+            if ($_price > 500) {
+                $this->price = $_price;
+            } else {
+                echo "Il prezzo deve essere maggiore di cinquecento.";
+            }
+        }
+    
+        //OTTIENI PREZZO
+        public function getPrice() {
+            return $this->price;
         }
 
     }

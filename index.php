@@ -60,9 +60,9 @@
                             <img src="<?php echo $singleDog->photo ?>" class="card-img-top" alt="<?php echo $singleDog->name ?>">
                             <div class="card-body text-center">
                                 <h5 class="card-title"><?php echo $singleDog->name ?></h5>
-                                <p class="card-text">Razza: <?php echo $singleDog->breed ?></p>
-                                <p class="card-text"><?php echo $singleDog->age ?> anni</p>
-                                <p class="card-text">Prezzo: <?php echo $singleDog->price ?>€</p>
+                                <p class="card-text"><b>Razza:</b> <?php echo $singleDog->breed ?></p>
+                                <p class="card-text"><b>Età:</b> <?php echo $singleDog->age ?> anni</p>
+                                <p class="card-text"><b>Prezzo:</b> <?php echo $singleDog->getPrice() ?>€</p>
                             </div>
                         </div>
                     </div>
@@ -77,9 +77,9 @@
                             <img src="<?php echo $singleCat->photo ?>" class="card-img-top" alt="<?php echo $singleCat->name ?>">
                             <div class="card-body text-center">
                                 <h5 class="card-title"><?php echo $singleCat->name ?></h5>
-                                <p class="card-text">Razza: <?php echo $singleCat->breed ?></p>
-                                <p class="card-text"><?php echo $singleCat->age ?> anni</p>
-                                <p class="card-text">Prezzo: <?php echo $singleCat->price ?>€</p>
+                                <p class="card-text"><b>Razza:</b> <?php echo $singleCat->breed ?></p>
+                                <p class="card-text"><b>Età:</b> <?php echo $singleCat->age ?> anni</p>
+                                <p class="card-text"><b>Prezzo:</b> <?php echo $singleCat->getPrice() ?>€</p>
                             </div>
                         </div>
                     </div>
