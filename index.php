@@ -62,6 +62,7 @@
                                 <h5 class="card-title"><?php echo $singleDog->name ?></h5>
                                 <p class="card-text">Razza: <?php echo $singleDog->breed ?></p>
                                 <p class="card-text"><?php echo $singleDog->age ?> anni</p>
+                                <p class="card-text">Prezzo: <?php echo $singleDog->price ?>€</p>
                             </div>
                         </div>
                     </div>
@@ -78,6 +79,7 @@
                                 <h5 class="card-title"><?php echo $singleCat->name ?></h5>
                                 <p class="card-text">Razza: <?php echo $singleCat->breed ?></p>
                                 <p class="card-text"><?php echo $singleCat->age ?> anni</p>
+                                <p class="card-text">Prezzo: <?php echo $singleCat->price ?>€</p>
                             </div>
                         </div>
                     </div>
