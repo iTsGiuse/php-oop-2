@@ -1,6 +1,8 @@
 <?php 
-    require_once __DIR__ . '/models/Dogs.php';
-    require_once __DIR__ . '/models/Cats.php';
+
+require_once __DIR__ . '/models/Prodotti.php';
+require_once __DIR__ . '/models/Dogs.php';
+
 
     $section= isset($_GET["userChoice"]) && $_GET["userChoice"] !== "active" ? $_GET["userChoice"] : false;
     $sectionDogs = null;
@@ -39,8 +41,8 @@
                         <div class="col-7">
                             <select class="form-select" name="userChoice">
                                 <option <?php echo $section === 'active' ? 'selected' : '' ?> value="active" selected>Scegli..</option>
-                                <option <?php echo $section === $sectionDogs ? 'selected' : '' ?> value="dogs">Cani</option>
-                                <option <?php echo $section === $sectionCats ? 'selected' : '' ?> value="cats">Gatti</option>
+                                <option <?php echo $section === $sectionDogs ? 'selected' : '' ?> value="dogs">Accessori per Cani</option>
+                                <option <?php echo $section === $sectionCats ? 'selected' : '' ?> value="cats">Accessori per Gatti</option>
                             </select>
                         </div>
                         <div class="col-3">
@@ -71,15 +73,15 @@
                 <?php } ?>
                 <?php if ($sectionCats) {?>
                 <div class="row py-3">
-                <?php foreach($cats as $singleCat) { ?>
+                <?php foreach($cuccie as $singleCuccia) { ?>
                     <div class="col-3">
                         <div class="card">
-                            <img src="<?php echo $singleCat->photo ?>" class="card-img-top" alt="<?php echo $singleCat->name ?>">
+                            <img src="<?php echo $singleCuccia->photo ?>" class="card-img-top" alt="<?php echo $singleCuccia->name ?>">
                             <div class="card-body text-center">
-                                <h5 class="card-title"><?php echo $singleCat->name ?></h5>
-                                <p class="card-text"><b>Razza:</b> <?php echo $singleCat->breed ?></p>
-                                <p class="card-text"><b>Età:</b> <?php echo $singleCat->age ?> anni</p>
-                                <p class="card-text"><b>Prezzo:</b> <?php echo $singleCat->getPrice() ?>€</p>
+                                <h5 class="card-title"><?php echo $singleCuccia->name ?></h5>
+                                <p class="card-text"><b>Tipo:</b> <?php echo $singleCuccia->type ?></p>
+                                <p class="card-text"><b>Materiale:</b> <?php echo $singleCuccia->material ?></p>
+                                <p class="card-text"><b>Prezzo:</b> <?php echo $singleCuccia->getPrice() ?>€</p>
                             </div>
                         </div>
                     </div>
