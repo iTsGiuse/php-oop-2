@@ -12,8 +12,4 @@
     $cuccie= new Product('Cuccie');
     $giochi= new Product('Giochi');
 
-    $products= [
-      $cuccie,
-      $giochi
-    ];
 ?>

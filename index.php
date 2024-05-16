@@ -1,8 +1,10 @@
 <?php 
 
-require_once __DIR__ . '/models/Prodotti.php';
-require_once __DIR__ . '/models/Dogs.php';
+    require_once __DIR__ . '/models/Kennels.php';
+    require_once __DIR__ . '/models/Games.php';
 
+    $cats= array_merge($gamesCat, $kennelsCat);
+    $dogs= array_merge($gamesDog, $kennelsDog);
 
     $section= isset($_GET["userChoice"]) && $_GET["userChoice"] !== "active" ? $_GET["userChoice"] : false;
     $sectionDogs = null;
@@ -62,26 +64,28 @@ require_once __DIR__ . '/models/Dogs.php';
                             <img src="<?php echo $singleDog->photo ?>" class="card-img-top" alt="<?php echo $singleDog->name ?>">
                             <div class="card-body text-center">
                                 <h5 class="card-title"><?php echo $singleDog->name ?></h5>
-                                <p class="card-text"><b>Razza:</b> <?php echo $singleDog->breed ?></p>
-                                <p class="card-text"><b>Età:</b> <?php echo $singleDog->age ?> anni</p>
+                                <p class="card-text pt-1"><b>Tipo:</b> <?php echo $singleDog->type ?></p>
+                                <p class="card-text"><b>Materiale:</b> <?php echo $singleDog->material ?></p>
                                 <p class="card-text"><b>Prezzo:</b> <?php echo $singleDog->getPrice() ?>€</p>
+                                <p class="card-text"><b>Si trova a:</b> <?php echo $singleDog->name_city ?></p>
                             </div>
                         </div>
                     </div>
                 <?php } ?>
                 </div>
                 <?php } ?>
-                <?php if ($sectionCats) {?>
+                <?php if($sectionCats) {?>
                 <div class="row py-3">
-                <?php foreach($cuccie as $singleCuccia) { ?>
+                <?php foreach($cats as $singleCat) { ?>
                     <div class="col-3">
                         <div class="card">
-                            <img src="<?php echo $singleCuccia->photo ?>" class="card-img-top" alt="<?php echo $singleCuccia->name ?>">
+                            <img src="<?php echo $singleCat->photo ?>" class="card-img-top" alt="<?php echo $singleCat->name ?>">
                             <div class="card-body text-center">
-                                <h5 class="card-title"><?php echo $singleCuccia->name ?></h5>
-                                <p class="card-text"><b>Tipo:</b> <?php echo $singleCuccia->type ?></p>
-                                <p class="card-text"><b>Materiale:</b> <?php echo $singleCuccia->material ?></p>
-                                <p class="card-text"><b>Prezzo:</b> <?php echo $singleCuccia->getPrice() ?>€</p>
+                                <h5 class="card-title"><?php echo $singleCat->name ?></h5>
+                                <p class="card-text pt-1"><b>Tipo:</b> <?php echo $singleCat->type ?></p>
+                                <p class="card-text"><b>Materiale:</b> <?php echo $singleCat->material ?></p>
+                                <p class="card-text"><b>Prezzo:</b> <?php echo $singleCat->getPrice() ?>€</p>
+                                <p class="card-text"><b>Si trova a:</b> <?php echo $singleCat->name_city ?></p>
                             </div>
                         </div>
                     </div>
